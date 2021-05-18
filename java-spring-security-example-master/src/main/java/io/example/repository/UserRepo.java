@@ -1,16 +1,10 @@
-package com.example.repository;
+package io.example.repository;
 
-
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.limit;
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.match;
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.newAggregation;
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.skip;
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.sort;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
+import io.example.domain.dto.Page;
+import io.example.domain.dto.SearchUsersQuery;
+import io.example.domain.exception.NotFoundException;
+import io.example.domain.model.User;
+import lombok.RequiredArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
@@ -26,12 +20,15 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
-import com.example.domain.dto.Page;
-import com.example.domain.dto.SearchUsersQuery;
-import com.example.domain.exception.NotFoundException;
-import com.example.domain.model.User;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
-import lombok.RequiredArgsConstructor;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.limit;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.match;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.newAggregation;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.skip;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.sort;
 
 @Repository @CacheConfig(cacheNames = "users")
 public interface UserRepo extends UserRepoCustom, MongoRepository<User, ObjectId> {

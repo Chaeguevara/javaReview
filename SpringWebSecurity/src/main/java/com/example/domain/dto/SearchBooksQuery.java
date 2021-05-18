@@ -15,7 +15,7 @@ public class SearchBooksQuery {
 	private LocalDateTime createdAtEnd;
 	
 	private String title;
-	private Set<String> genre;
+	private Set<String> genres;
 	private String isbn13;
 	private String isbn10;
 	private String publisher;

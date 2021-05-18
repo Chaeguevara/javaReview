@@ -1,4 +1,4 @@
-package com.example.domain.model;
+package io.example.domain.model;
 
 import lombok.Data;
 import org.bson.types.ObjectId;
