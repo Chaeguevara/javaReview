@@ -36,6 +36,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.formLogin()
 				.loginPage("/loginForm")
 				.loginProcessingUrl("/login")//login 주소가 호출되면 시큐리티가 낚아채서 대신 진행?? -> 컨트롤러에 로그인 만들필요가 없음
-				.defaultSuccessUrl("/"); //성공시 기본 이동. 특정 페이지를 호출했다면 그곳으로 로그인 후 이동
+				.defaultSuccessUrl("/")//성공시 기본 이동. 특정 페이지를 호출했다면 그곳으로 로그인 후 이동
+				.and()
+				.oauth2Login() // oauth2URL실행될때 무언가 하는 것
+				.loginPage("/loginForm")//구글로그인이 완료된 뒤의 후처리 필요
+				; 
 	}
 }
