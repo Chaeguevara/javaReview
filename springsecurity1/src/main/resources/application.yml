@@ -31,3 +31,18 @@ spring:
             scope:
             - email
             - profile
+          facebook:
+            client-id: 1125866391234236
+            client-secret: eba74d5c4e0dd2c6de2696f0f59e0f58
+            scope:
+            - email
+            - public_profile
+          naver:
+            client-id: ??
+            client-secret: ??
+            scope:
+            - name
+            - email
+            client-name: Naver
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/naver
