@@ -8,6 +8,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.cos.jwt.model.User;
 
+import lombok.Data;
+
+@Data
 public class PrincipalDetails implements UserDetails{
 
 	private User user;
@@ -20,7 +23,7 @@ public class PrincipalDetails implements UserDetails{
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Collection<GrantedAuthority> autorities = new ArrayList<>();
 		user.getRoleList().forEach(r->{
-			autorities.add(()->r);
+			autorities.add(()->r); 
 		});
 		return autorities;
 	}
