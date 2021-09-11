@@ -1,0 +1,19 @@
+<persistence
+        version="2.1"
+        xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence_2_1.xsd">
+
+    <persistence-unit name="HelloWorldPU"><!--persistence unit -->
+        <jta-data-source>myDS</jta-data-source> <!-- DB연결 -->
+        <class>org.jpwh.model.helloworld.Message</class> <!-- class위치. 바꿔야할듯 -->
+        <exclude-unlisted-classes>true</exclude-unlisted-classes><!-- 자동 persistence class 스캔 기능 disable-->
+        <properties> <!-- vendor 관련 설정. 여기선 hibernate로 퉁친 -->
+            <property name="javax.persistence.schema-generation.database.action"
+                      value="drop-and-create"/> <!-- 실행마다 테이블 Drop및 생성 -->
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql)comments" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
