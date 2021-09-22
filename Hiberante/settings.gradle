@@ -2,4 +2,5 @@ rootProject.name = 'Hiberante'
 include 'model'
 include 'examples'
 include 'environment'
+include 'shared'
 
