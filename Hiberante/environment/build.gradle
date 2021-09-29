@@ -14,11 +14,15 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-jdk14
     testImplementation "org.slf4j:slf4j-jdk14:${depVersions.slf4j_imple}"
-    // https://mvnrepository.com/artifact/org.codehaus.btm/btm
+
+    implementation "org.testng:testng:${depVersions.testing}"
+
+
     implementation "org.codehaus.btm:btm:${depVersions.btm}"
     implementation project(':shared') //다른 subproject(module) 참조
 }
 
 test {
     useJUnitPlatform()
+    useTestNG()
 }

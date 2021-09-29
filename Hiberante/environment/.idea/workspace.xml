@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92d65685-37d3-4ba2-9567-b920b1b4a400" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/jpwh/env/TransactionManagerSetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jndi.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/jpwh/env/TransactionManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/jpwh/env/TransactionManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../examples/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/src/test/java/org/jpwh/helloworld/HelloWorldJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/src/test/java/org/jpwh/helloworld/HelloWorldJPA.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../build.gradle" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -48,6 +48,7 @@
       <updated>1632273543261</updated>
       <workItem from="1632273544523" duration="87000" />
       <workItem from="1632273705780" duration="31000" />
+      <workItem from="1632887150591" duration="15000" />
     </task>
     <servers />
   </component>
