@@ -11,7 +11,7 @@ public class mergeTwoLists {
     }
     public ListNode mergeTwoLists(ListNode list1, ListNode list2){
         //base case
-        if (list1 == null || list2 == null){
+        if (list1 == null && list2 == null){
             return  null;
         }
 
@@ -27,8 +27,11 @@ public class mergeTwoLists {
         ListNode curr=sentinel,curr1=list1,curr2=list2,succ=curr.next,succ1=curr1.next,succ2=curr2.next;
         if (curr1.val <= curr2.val){
             curr.next = curr1;
+            curr1.next = mergeTwoLists(succ1,curr2);
         }else{
-            curr.next = mergeTwoLists(curr1,succ2);
+            curr.next = curr2;
+            curr2.next = mergeTwoLists(curr1,succ2);
+
 
         }
 
