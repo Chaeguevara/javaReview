@@ -4,6 +4,8 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/Hiberante" />
     <file type="web" url="file://$PROJECT_DIR$/leetcode" />
+    <file type="web" url="file://$PROJECT_DIR$/loginServer" />
+    <file type="web" url="file://$PROJECT_DIR$/loginserver" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
