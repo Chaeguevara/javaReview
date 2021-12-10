@@ -1,13 +1,21 @@
 package com.loginServer.loginserver.controller;
 
+import com.loginServer.loginserver.model.User;
+import com.loginServer.loginserver.repository.UserRepository;
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.logging.Logger;
 
 @Controller
+@Slf4j
 public class IndexController {
+
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping({"","/"})
     public String index(){
@@ -24,9 +32,14 @@ public class IndexController {
         return "어드민 페이지";
     }
 
-    @GetMapping("/login")
-    public @ResponseBody String login(){
-        return "login";
+    @GetMapping("/loginForm")
+    public String loginForm(){
+        return "loginForm";
+    }
+
+    @GetMapping("/joinForm")
+    public String joinForm(){
+        return "joinForm";
     }
 
     @GetMapping("/manager")
@@ -34,8 +47,12 @@ public class IndexController {
         return "manager";
     }
 
-    @GetMapping("/join")
-    public String join(){
+    @PostMapping("/join")
+    public @ResponseBody String join(User user){
+        log.info("User : " + user);
+        user.setRole("ROLE_USER");
+        userRepository.save(user); // 비밀번호 encryption 필요
+
         return "join";
     }
 
