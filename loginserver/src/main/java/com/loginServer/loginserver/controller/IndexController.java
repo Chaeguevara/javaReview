@@ -5,6 +5,7 @@ import com.loginServer.loginserver.repository.UserRepository;
 import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,9 @@ public class IndexController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @GetMapping({"","/"})
     public String index(){
@@ -48,12 +52,15 @@ public class IndexController {
     }
 
     @PostMapping("/join")
-    public @ResponseBody String join(User user){
+    public String join(User user){
         log.info("User : " + user);
         user.setRole("ROLE_USER");
+        String rawPassword = user.getPassword();
+        String encPassword = bCryptPasswordEncoder.encode(rawPassword);
+        user.setPassword(encPassword);
         userRepository.save(user); // 비밀번호 encryption 필요
 
-        return "join";
+        return "redirect:/loginForm";
     }
 
     @GetMapping("/joinProc")
