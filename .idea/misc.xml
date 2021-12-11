@@ -6,6 +6,7 @@
     <file type="web" url="file://$PROJECT_DIR$/leetcode" />
     <file type="web" url="file://$PROJECT_DIR$/loginServer" />
     <file type="web" url="file://$PROJECT_DIR$/loginserver" />
+    <file type="web" url="file://$PROJECT_DIR$/oAuth" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
