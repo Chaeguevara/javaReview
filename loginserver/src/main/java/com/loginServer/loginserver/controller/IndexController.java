@@ -5,6 +5,8 @@ import com.loginServer.loginserver.repository.UserRepository;
 import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -66,6 +68,18 @@ public class IndexController {
     @GetMapping("/joinProc")
     public @ResponseBody String joinProc(){
         return "회원가입 완료됨!";
+    }
+
+    @Secured("ROLE_ADMIN") // 로컬. 하나있을때. 자주 쓰임 
+    @GetMapping("/info")
+    public @ResponseBody String info(){
+        return "개인정보";
+    }
+
+    @PreAuthorize("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')") //여러개
+    @GetMapping("/data")
+    public @ResponseBody String data(){
+        return "데이터정보";
     }
 
 }
