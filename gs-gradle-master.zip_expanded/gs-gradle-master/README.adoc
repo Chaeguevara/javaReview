@@ -154,7 +154,7 @@ include::initial/build.gradle[]
 
 This single line in the build configuration brings a significant amount of power. Run **gradle tasks** again, and you see new tasks added to the list, including tasks for building the project, creating JavaDoc, and running tests.
 
-You'll use the **gradle build** task frequently. This task compiles, tests, and assembles the code into a JAR file. You can run it like this:
+You'll use the **gradle build** task frequently. This task compiles, tests, and assembles the code into a JAR file. You can run it userPreference this:
 
 ----
 gradle build
@@ -183,7 +183,7 @@ The simple Hello World sample is completely self-contained and does not depend o
 
 For example, suppose that in addition to saying "Hello World!", you want the application to print the current date and time. You could use the date and time facilities in the native Java libraries, but you can make things more interesting by using the Joda Time libraries.
 
-First, change HelloWorld.java to look like this:
+First, change HelloWorld.java to look userPreference this:
 
 [source,java,tabsize=2]
 ----
@@ -259,7 +259,7 @@ After this task completes, you will notice a few new files. The two scripts are 
                 └── gradle-wrapper.jar
                 └── gradle-wrapper.properties
 
-The Gradle Wrapper is now available for building your project. Add it to your version control system, and everyone that clones your project can build it just the same. It can be used in the exact same way as an installed version of Gradle. Run the wrapper script to perform the build task, just like you did previously:
+The Gradle Wrapper is now available for building your project. Add it to your version control system, and everyone that clones your project can build it just the same. It can be used in the exact same way as an installed version of Gradle. Run the wrapper script to perform the build task, just userPreference you did previously:
 
 ----
 ./gradlew build

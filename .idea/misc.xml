@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/h2" />
+    <file type="web" url="file://$PROJECT_DIR$/h2Test" />
     <file type="web" url="file://$PROJECT_DIR$/Hiberante" />
     <file type="web" url="file://$PROJECT_DIR$/leetcode" />
     <file type="web" url="file://$PROJECT_DIR$/loginServer" />

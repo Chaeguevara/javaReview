@@ -31,7 +31,7 @@ Whereas in a relational schema, the rows are identified with their values in the
 In order to overcome this, normally the database tables may contain primary keys. These row identifiers are represnted as one of the object properties in the object model. 
 
 ==== Identity Mismatch
-Lastly, associations are another key feature of any Object Oriented Programming language. Examples like a shopping basket is a collection of items, a car has a specific engine type, each trade has an instrument etc are all expressed as some form of associations. 
+Lastly, associations are another key feature of any Object Oriented Programming language. Examples userPreference a shopping basket is a collection of items, a car has a specific engine type, each trade has an instrument etc are all expressed as some form of associations.
 
 Good thing is that these associations are supported by relational databases to some extent atleast. The foreign-key referring to a primary key of another table is the way of expressing an association in relational schema. However, object models exhibits not just one but three types of relationships: one-to-one, one-to-many and many-to-many. Converting these relationships to foreignkey-primarykey association is challenging but not impossible.
 
@@ -251,7 +251,7 @@ The following snippet shows this:
  </hibernate-configuration>
 ----
 
-[TODO - check] Instead of declaring each one of them as a resource, you can declare them all of them like a list:
+[TODO - check] Instead of declaring each one of them as a resource, you can declare them all of them userPreference a list:
 
 [source, xml]
 ----
