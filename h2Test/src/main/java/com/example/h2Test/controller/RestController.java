@@ -1,5 +1,6 @@
 package com.example.h2Test.controller;
 
+import com.example.h2Test.Dto.UserDto;
 import com.example.h2Test.entity.Book;
 import com.example.h2Test.entity.UserPreference;
 import com.example.h2Test.entity.User;
@@ -25,14 +26,10 @@ public class RestController {
     LikeRepository likeRepository;
 
     @PostMapping("/user")
-    public String createUser(@RequestBody User user){
+    public User createUser(@RequestBody User user){
         System.out.println("createUser");
         user = userRepository.save(user);
-        UserPreference userPreference = new UserPreference();
-        if(user.getUserPreferenceList()!=null){
-            System.out.println(user.getUserPreferenceList().get(0).toString());
-        }
-        return user.toString();
+        return user;
     }
 
     @GetMapping("/user")
@@ -41,9 +38,12 @@ public class RestController {
     }
 
     @GetMapping("/user/{id}")
-    public User getUser(@PathVariable(value = "id") Long id){
+    public UserDto getUser(@PathVariable(value = "id") Long id){
         User user = userRepository.getById(id);
-        return user;
+        UserDto userDto = new UserDto();
+        userDto.setUsername(user.getUsername());
+        userDto.setUserPreferenceList(user.getUserPreferenceList());
+        return userDto;
     }
 
     @PostMapping("/book")
@@ -63,9 +63,7 @@ public class RestController {
                              @PathVariable(value = "book-id") Long bookId){
         User user = userRepository.getById(userId);
         Book book = bookRepository.getById(bookId);
-        UserPreference userPreference = new UserPreference();
-        userPreference.setBook(book);
-        userPreference.setUser(user);
+        UserPreference userPreference = new UserPreference(null,user,book,0);
         userPreference.setRating(5);
         userPreference = likeRepository.save(userPreference);
         return userPreference;
