@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.*;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Entity
@@ -16,7 +18,17 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    @JsonIgnore
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<UserPreference> userPreferenceList;
+
+    @Transient
+    public List<UserPreference> getUserPreferenceList(){
+        if (userPreferenceList ==null || userPreferenceList.size()==0) return new ArrayList<>();
+        Iterator<UserPreference> iterator = userPreferenceList.iterator();
+//        while(iterator.hasNext()){
+//            UserPreference userPreference = iterator.next()
+//        }
+        return userPreferenceList;
+    }
+
 }

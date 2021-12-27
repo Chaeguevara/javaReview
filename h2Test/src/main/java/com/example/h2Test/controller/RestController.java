@@ -38,12 +38,12 @@ public class RestController {
     }
 
     @GetMapping("/user/{id}")
-    public UserDto getUser(@PathVariable(value = "id") Long id){
+    public User getUser(@PathVariable(value = "id") Long id){
         User user = userRepository.getById(id);
         UserDto userDto = new UserDto();
         userDto.setUsername(user.getUsername());
         userDto.setUserPreferenceList(user.getUserPreferenceList());
-        return userDto;
+        return user;
     }
 
     @PostMapping("/book")
