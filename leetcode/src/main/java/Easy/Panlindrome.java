@@ -1,3 +1,5 @@
+package Easy;
+
 public class Panlindrome {
     public static boolean isPalindrom(int x){
         if (x<0){

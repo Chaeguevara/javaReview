@@ -1,4 +1,4 @@
-
+package Easy;
 
 public class LinkedListCycle {
 
@@ -8,8 +8,8 @@ public class LinkedListCycle {
       ListNode(int x) {
           val = x;
           next = null;
-      }
-  }
+        }
+     }
 
     public boolean hasCycle(ListNode head) {
         if(head ==null || head.next == null){

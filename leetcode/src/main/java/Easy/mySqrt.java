@@ -1,3 +1,5 @@
+package Easy;
+
 public class mySqrt {
     public static int soultion(int x){
         if (x < 2) return x;

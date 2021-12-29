@@ -3,11 +3,11 @@
 
 # Custom for Visual Studio
 *.cs     diff=csharp
-*.sln    merge=union
-*.csproj merge=union
-*.vbproj merge=union
-*.fsproj merge=union
-*.dbproj merge=union
+*.sln    Easy.merge=union
+*.csproj Easy.merge=union
+*.vbproj Easy.merge=union
+*.fsproj Easy.merge=union
+*.dbproj Easy.merge=union
 
 # Standard to msysgit
 *.doc	 diff=astextplain

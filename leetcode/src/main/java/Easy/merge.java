@@ -1,3 +1,5 @@
+package Easy;
+
 public class merge {
     public static void solution(int[] nums1, int m, int[] nums2, int n){
         System.out.println("Start of Test");

@@ -1,3 +1,5 @@
+package Easy;
+
 public class searchInsert {
 
     public static int solution(int[] nums, int target){

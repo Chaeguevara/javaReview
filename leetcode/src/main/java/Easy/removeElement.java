@@ -1,3 +1,5 @@
+package Easy;
+
 public class removeElement {
     public static int solution(int[] nums, int val) {
 //        if (nums.length ==0){
